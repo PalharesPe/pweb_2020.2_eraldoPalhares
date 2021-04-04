@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>     
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta codigoSemana2="1511258812">
-    <link rel="stylesheet" href="style/style.css">
-	<title>Pweb Eraldo Palhares</title>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=, initial-scale=1.0">
+<meta codigoSemana2="1511258812">
+<title>Pweb Eraldo Palhares</title>
+<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+<link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-  
-  <ul>
-  <li><a  href="index.html">Inicio</a></li>
-  <hr>
-  <li><a class="active" href="noticias.html">Canais de noticias</a></li>
-  <hr>
-  <li><a href="adicionarPessoa.html">Adicionar pessoa</a></li>
-  <li><a href="listarPessoas.html">Listar pessoas</a></li>
-  <hr>
-  <li><a href="sobre.html">Sobre o site</a></li>
-  <li><a href="contato.html">Mande um e-Mail</a></li>
-      </ul>
-      
-  
-  <div style="margin-left:25%;padding:1px 16px;height:1000px;">
-    <h1>Catálogo de site de Noticias</h1>
-    <h2>Veja as noticias no Google News</h2>
-    <a href="https://news.google.com.br/" target="_blank">Google Noticias</a>    
-    <h2>Veja as noticias no Exame</h2>
-    <a href="https://exame.com/"  target="_blank">Exame.com</a>
-    
-  </div>
+
+	<ul>
+		<li><a href="/">Inicio</a></li>
+		<hr>
+		<li><a href="/public/noticias.html">Canais de noticias</a></li>
+		<hr>
+		<li><a href="/adicionarPessoa">Adicionar pessoa</a></li>
+		<li><a href="/listarPessoas">Listar pessoas</a></li>
+		<hr>
+		<li><a href="/public/sobre.html">Sobre o site</a></li>
+		<li><a href="/public/contato.html">Mande um e-Mail</a></li>
+	</ul>
+
+
+	<div style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
+		<h1>Catálogo de site de Noticias</h1>
+		<h2>Veja as noticias no Google News</h2>
+		<a href="https://news.google.com.br/" target="_blank">Google
+			Noticias</a>
+		<h2>Veja as noticias no Exame</h2>
+		<a href="https://exame.com/" target="_blank">Exame.com</a>
+
+	</div>
 </body>
 </html>

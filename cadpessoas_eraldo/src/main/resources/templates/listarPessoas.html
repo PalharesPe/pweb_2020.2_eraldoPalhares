@@ -1,63 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>     
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <meta codigoSemana2="1511258812">
-    <title>Pweb Eraldo Palhares</title>
-    <link rel="stylesheet" href="style/style.css">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=, initial-scale=1.0">
+<meta codigoSemana2="1511258812">
+<title>Pweb Eraldo Palhares</title>
+<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+<link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
+
 	<ul>
-        <li><a  href="index.html">Inicio</a></li>
-        <hr>
-        <li><a href="noticias.html">Canais de noticias</a></li>
-        <hr>
-        <li><a href="adicionarPessoa.html">Adicionar pessoa</a></li>
-        <li><a class="active" href="listarPessoas.html">Listar pessoas</a></li>
-        <hr>
-        <li><a href="sobre.html">Sobre o site</a></li>
-        <li><a href="contato.html">Mande um e-Mail</a></li>
-    </ul>
+		<li><a href="/">Inicio</a></li>
+		<hr>
+		<li><a href="/public/noticias.html">Canais de noticias</a></li>
+		<hr>
+		<li><a href="/adicionarPessoa">Adicionar pessoa</a></li>
+		<li><a href="/listarPessoas">Listar pessoas</a></li>
+		<hr>
+		<li><a href="/public/sobre.html">Sobre o site</a></li>
+		<li><a href="/public/contato.html">Mande um e-Mail</a></li>
+	</ul>
 
-<div style="margin-left:25%;padding:1px 16px;height:1000px;">
-    <h1>Lista de pessoas cadastradas</h1>
+	<div style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
+		<h1>Lista de pessoas cadastradas</h1>
 
-<table>
-  <tr>
-    <th>Nome completo</th>
-    <th>Data de nascimento</th>
-    <th>e-Mail</th>
-    <th>Sexo</th>
-    <th>Editar</th>
-    <th>Remover</th>
-  </tr>
-  <tr>
-    <td>Peter jackson</td>
-    <td>30/03/1972</td>
-    <td><a href="mailto:peter@bol.com">peter@bol.com</a></td>
-    <td>Masculino</td>
-    <td><a href="editarPessoa.html">Editar</a> </td>
-    <td><a href="#">Remover</a></td>
-  </tr>
-  <tr>
-    <td>Clara </td>
-    <td>06/05/1994</td>
-    <td><a href="mailto:clara@bol.com">clara@bol.com</a></td>
-    <td>Feminino</td>
-    <td><a href="editarPessoa.html">Editar</a> </td>
-    <td><a href="#">Remover</a></td>
-  </tr>
-  <tr>
-    <td>João maria</td>
-    <td>15/02/1986</td>
-    <td><a href="mailto:majoao@nsn.com">majoao@nsn.com</a></td>
-    <td>Não informado</td>
-    <td><a href="editarPessoa.html">Editar</a> </td>
-    <td><a href="#">Remover</a></td>
-  </tr>
-</table>
-</div>
+		<table>
+			<tr>
+				<th>Nome completo</th>
+				<th>Data de nascimento</th>
+				<th>e-Mail</th>
+				<th>Sexo</th>
+				<th>Editar</th>
+				<th>Remover</th>
+			</tr>
+			<tr>
+				<td>Peter jackson</td>
+				<td>30/03/1972</td>
+				<td><a href="mailto:peter@bol.com">peter@bol.com</a></td>
+				<td>Masculino</td>
+				<td><a href="editarPessoa.html">Editar</a></td>
+				<td><a href="#">Remover</a></td>
+			</tr>
+			<tr>
+				<td>Clara</td>
+				<td>06/05/1994</td>
+				<td><a href="mailto:clara@bol.com">clara@bol.com</a></td>
+				<td>Feminino</td>
+				<td><a href="editarPessoa.html">Editar</a></td>
+				<td><a href="#">Remover</a></td>
+			</tr>
+			<tr>
+				<td>João maria</td>
+				<td>15/02/1986</td>
+				<td><a href="mailto:majoao@nsn.com">majoao@nsn.com</a></td>
+				<td>Não informado</td>
+				<td><a href="editarPessoa.html">Editar</a></td>
+				<td><a href="#">Remover</a></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
