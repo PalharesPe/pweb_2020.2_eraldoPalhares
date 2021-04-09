@@ -13,46 +13,49 @@
 
 	<ul>
 		<li><a href="/">Inicio</a></li>
-		<hr>
-		<li><a href="/public/noticias.html">Canais de noticias</a></li>
-		<hr>
+		<hr>		
 		<li><a href="/adicionarPessoa">Adicionar pessoa</a></li>
 		<li><a href="/listarPessoas">Listar pessoas</a></li>
 		<hr>
-		<li><a href="/public/sobre.html">Sobre o site</a></li>
-		<li><a href="/public/contato.html">Mande um e-Mail</a></li>
+		<li><a href="/public/noticias.html" >Noticias</a></li>
+		<li><a href="/public/sobre.html" >Sobre</a></li>
+		<li><a href="/public/contato.html">Contato</a></li>
 	</ul>
 
 
 	<div style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
 		<h1>Formulário para edição de pessoas:</h1>
-		<form method="get" action="listarPessoas.html">
+		<form action="#" th:action="@{/editar/{id}(id=${pessoa.id})}" th:object="${pessoa}" method="POST">
+
+
 			<p>
-				Nome completo *: <input type="text" name="nome"
-					placeholder="Seu nome completo">
+				Nome completo *: 
+				<input type="text" th:field="*{nome}"  placeholder="Seu nome completo." id="nome" required />
 			</p>
 			<p>
-				Data de nascimento *: <input type="" name="date"
-					placeholder="dd/mm/aaaa">
+				Data de nascimento *: 
+				<input type="date" th:field="*{dataNascimento}" placeholder="dd/mm/aaaa" id="dataNascimento"  required />
 			</p>
 			<p>
-				e-Mail *: <input type="e-mail" name="email"
-					placeholder="nome@dominio.com">
+				e-Mail *: 				
+				<input type="text" th:field="*{email}" placeholder="nome@dominio.com" id="email"  required />
 			</p>
 			<p>Sexo *:</p>
 			<p>
-				<input type="radio" name="sexom" value="masculino">Masculino
+
+				<input type="radio" name="genero" value="Masculino" th:field="*{genero}" required />Masculino
 			</p>
 			<p>
-				<input type="radio" name="sexof" value="feminino">Feminino
+
+				<input type="radio" name="genero" value="Feminino" th:field="*{genero}" required />Feminino
 			</p>
 			<p>
-				<input type="radio" name="sexon" value="naoinformar">Não
-				informar
+
+				<input type="radio" name="genero" value="Não informado"	th:field="*{genero}" required />Não informar
 			</p>
 
-			<button type="reset" class="button">Limpar</button>
-			<button type="submit" class="button">Cadastrar!</button>
+			<input type="reset" class="button button12px" value="Limpar">
+			<input type="submit" class="button button12px" value="Editar">
 		</form>
 		<p>* Campo obrigatório</p>
 
