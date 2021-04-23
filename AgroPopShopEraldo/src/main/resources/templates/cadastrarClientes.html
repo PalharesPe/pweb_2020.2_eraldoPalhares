@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+
+	<title>Agro Pop Shop - Eraldo</title>
+	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="Menu">
+		<ul>
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/cadastrarClientes">Cadastrar</a></li>
+			<li><a href="/listarClientes">Clientes</a></li>
+			<li><a href="/public/sobre.html">Sobre</a></li>
+			<li><a href="/public/contato.html">Contato</a></li>
+		</ul>
+	</div>
+
+
+	<h1>Adicionar Clientes</h1>
+
+	<form method="POST" th:object="${cliente}" th:action="@{/cadastrarClientes}">
+
+		<p>
+			Nome completo *: <input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />
+		</p>
+		<p>
+			Data de nascimento *: <input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}" required />
+		</p>
+		<p>
+			e-Mail *: <input type="text" placeholder="nome@dominio.com" th:field="*{email}" required />
+		</p>
+		<p>Sexo *:</p>
+		<p>
+
+			<input type="radio" name="genero" value="Masculino" th:field="*{genero}" required />Masculino
+		</p>
+		<p>
+
+			<input type="radio" name="genero" value="Feminino" th:field="*{genero}" required />Feminino
+		</p>
+		<p>
+
+			<input type="radio" name="genero" value="Não informado" th:field="*{genero}" required />Não informar
+		</p>
+
+		<input type="reset" class="button button12px" value="Limpar">
+		<input type="submit" class="button button12px" value="Adicionar!">
+	</form>
+
+
+
+</body>
+
+</html>
