@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,5 +36,11 @@ public class agroController {
 		ModelAndView modelAndView = new ModelAndView("cadastrarClientes");
 		modelAndView.addObject(new Cliente());
 		return modelAndView;
+	}
+	@PostMapping("/cadastrarClientes")
+	public String cadastrarClientes(Cliente c) {
+		this.agroRepo.save(c);
+		return "redirect:/listarClientes";
+
 	}
 }
