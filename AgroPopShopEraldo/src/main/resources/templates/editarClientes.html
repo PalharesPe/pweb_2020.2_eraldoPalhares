@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=, initial-scale=1.0">
 
-	<title>Agro Pop Shop - Cadastrar Clientes</title>
+	<title>Agro Pop Shop - Editar Cliente</title>
 	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
 	<link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
@@ -26,9 +26,9 @@
 	</div>
 
 
-	<p>Adicionar Cliente</p>
+	<h2></h2>
 	<div class="cad">
-		<form method="POST" th:object="${cliente}" th:action="@{/cadastrarClientes}">
+		<form action="#" th:action="@{/editar/{id}(id=${cliente.id})}" th:object="${cliente}" method="POST">
 
 			<p>
 				Nome completo: <input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />

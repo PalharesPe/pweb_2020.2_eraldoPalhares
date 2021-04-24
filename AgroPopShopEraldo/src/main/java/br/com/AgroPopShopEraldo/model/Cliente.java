@@ -1,16 +1,16 @@
 package br.com.AgroPopShopEraldo.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
-import javax.persistence.Column;
+
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,10 +31,11 @@ public class Cliente implements Serializable{
 	private String nome;
 	private String genero;
 	private String email;
+	private String endereço, municipio, cidade, bairro;
+	private String cep;
 	
-	@Column(nullable = false)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private LocalDate dataNascimento;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -53,17 +54,46 @@ public class Cliente implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
+	
 	public String getGenero() {
 		return genero;
 	}
 	public void setGenero(String genero) {
 		this.genero = genero;
 	}
+	public String getEndereço() {
+		return endereço;
+	}
+	public void setEndereço(String endereço) {
+		this.endereço = endereço;
+	}
+	public String getMunicipio() {
+		return municipio;
+	}
+	public void setMunicipio(String municipio) {
+		this.municipio = municipio;
+	}
+	public String getCidade() {
+		return cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	public String getBairro() {
+		return bairro;
+	}
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 
 }

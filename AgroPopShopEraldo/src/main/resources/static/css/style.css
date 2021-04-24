@@ -1,30 +1,58 @@
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: #f5f5c1;
     text-align: center;
-    color: rgb(255, 128, 0);
+    color: rgb(0, 0, 0);
 }
-Menu ul {
-    padding:0px;
-    margin:0px;
-    background-color:#EDEDED;
+.p{
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+
+form {
+	margin-left: 20px;
+}
+
+.Menu ul {
+	/*Desce o menu*/
+	margin-top: 45px;
+	padding-top: -5px;
+    padding: 13px;
+    /*Aumenta o fundo do menu*/
+    padding-bottom:7px;
+    width: 1900px;
+    margin-left: -10px;
+    background-color:#f2f390;
     list-style:none;
 }
-.Menu ul li { display: inline; 
-}
-.Menu ul li a {
-    padding: 2px 10px;
-    display: inline-block;
 
-    
-    background-color:#EDEDED;
-    color: #333;
+/* Deixa o menu vertical*/
+.Menu ul li { 		
+	display: inline; 
+}
+/*Tamanho do menu*/
+.Menu ul li a {	
+	margin-top: 25px;
+	margin-bottom: 25px;
+    padding: 8px 50px;    
+    margin-left:-4px;
+        
+    background-color:#f2f390;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    border-bottom:3px solid #EDEDED;
+    
+   
 }
-.Menu ul li a.hover {
-    background-color: rgb(34, 34, 143);
-    color: blue;
+.Menu ul li a:hover {
+    background-color: rgb(128, 64, 64);
+    color: rgb(245, 220, 131);
 }
+.Menu a.active{
+	background: rgb(128, 64, 64);
+	color: #ffff;
+}
+
+
+/*Formulario lista*/
   table {
     border-collapse: collapse;
     width: 100%;
@@ -37,5 +65,37 @@ Menu ul {
   }
   
   tr:hover {
-      background-color:#f5f5f5;
+      background-color:rgb(248, 248, 214);
+      
   }
+  .top{
+	margin-left: -8px;
+	margin-top: -9px ;	
+	height: 90px;
+	
+	
+}
+  .cad {
+    text-align: left;
+    background: #f1f1b7;
+    margin: auto;
+    width: 600px;
+    height:auto;
+    border-radius: 10px;
+    border: solid 2px;  
+    border-color: rgb(43, 45, 0);
+    font-size: 15px;
+    
+    }
+    .list {
+    text-align: left;
+    background: #f1f1b7;
+    margin: auto;
+    width: 800px;
+    height:auto;
+    border-radius: 10px;
+    border: solid 2px;  
+    border-color: rgb(43, 45, 0);
+    font-size: 15px;
+    
+    }

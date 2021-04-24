@@ -6,17 +6,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=, initial-scale=1.0">
 
-	<title>Agro Pop Shop - Eraldo</title>
+	<title>Agro Pop Shop - Clientes Cadastrados</title>
 	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
 	<link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 
 <body>
+<div class="top">
+	<img th:src="@{/imagens/plantação.jpg}" class="img-responsive" />
+	</div>
 	<div class="Menu">
 		<ul>
 			<li><a href="/">Inicio</a></li>
 			<li><a href="/cadastrarClientes">Cadastrar</a></li>
-			<li><a href="/listarClientes">Clientes</a></li>
+			<li><a href="/listarClientes" class="active">Clientes</a></li>
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
@@ -24,32 +27,33 @@
 
 
 
-
-	<div style="margin-left: 25%; padding: 1px 16px; height: 1000px;">
-		<center><h1>Lista de pessoas cadastradas</h1></center>
+<p>Clientes Cadastrados</p>
+	<div class="list">
+		
 		<table>
 			<thead>
 				<tr>
 				
-					<th>id</th>
-					<th>Nome Completo</th>
-					<th>Data de Nascimento</th>
+					<th>Codigo</th>
+					<th>Nome Completo</th>					
 					<th>e-Mail</th>
 					<th>Genêro</th>
+					<th>CEP</th>					
 					<th>Editar</th>
-					<th>Remover</th>
+					<th>Remover</th>					
 				</tr>
 			</thead>
 			<tbody>
 
 				<tr th:each="clientes: ${clientes}">
-					<td th:text="${clientes.id}"></td>
+				
+					<td th:text="${clientes.id}"></td>										
 					<td th:text="${clientes.nome}"></td>
-					<td>
-					<a th:href="'mailto:'+${clientes.email}" th:text="${clientes.email}"></a>
-					</td>
-					<td th:text="${#temporals.format(clientes.dataNascimento,'dd/MM/yyyy')}"></td>
-					<td th:text="${clientes.genero}"></td>
+					<td><a th:href="'mailto:'+${clientes.email}" th:text="${clientes.email}"></a></td>
+					
+					<td th:text="${clientes.genero}"></td>					
+					<td th:text="${clientes.cep}"></td>
+										
 					<td>
 					<a th:href="@{/editar/{id}(id=${clientes.id})}">Editar</a>
 					</td>
@@ -61,6 +65,7 @@
 			</tbody>
 		</table>
 		</div>
+		
 
 </body>
 
