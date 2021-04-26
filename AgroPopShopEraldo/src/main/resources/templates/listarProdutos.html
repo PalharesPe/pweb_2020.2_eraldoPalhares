@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=, initial-scale=1.0">
 	<meta codigoSecreto="1717583737">
-	<title>Agro Pop Shop - Clientes Cadastrados</title>
+	<title>Agro Pop Shop - Produtos Cadastrados</title>
 	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
 	<link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
@@ -20,25 +20,26 @@
 			<li><a href="/">Inicio</a></li>
 			<li><a href="/cadastrarClientes">Cadastrar</a></li>
 			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
-			<li><a href="/listarClientes" class="active">Clientes</a></li>
-			<li><a href="/listarProdutos">Produtos</a></li>
+			<li><a href="/listarClientes">Clientes</a></li>
+			<li><a href="/listarProdutos" class="active">Produtos</a></li>
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
 	</div>
 
-	<p>Clientes Cadastrados</p>
+	<p>Produtos Cadastrados</p>
 	<div class="list">
-
 		<table>
 			<thead>
 				<tr>
-
-					<th>Codigo</th>
-					<th>Nome Completo</th>
-					<th>e-Mail</th>
-					<th>Genêro</th>
-					<th>CEP</th>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Marca</th>
+					<th>Altura</th>
+					<th>Largura</th>
+					<th>profundidade</th>
+					<th>Peso</th>
+					<th>Preço</th>
 					<th>Data de Cadastro</th>
 					<th>Editar</th>
 					<th>Remover</th>
@@ -46,23 +47,26 @@
 			</thead>
 			<tbody>
 
-				<tr th:each="clientes: ${clientes}">
+				<tr th:each="produtos: ${produtos}">
 
-					<td th:text="${clientes.id}"></td>
-					<td th:text="${clientes.nome}"></td>
-					<td><a th:href="'mailto:'+${clientes.email}" th:text="${clientes.email}"></a></td>
-					<td th:text="${clientes.genero}"></td>
-					<td th:text="${clientes.cep}"></td>
-					<td th:text="${#temporals.format(clientes.dataCadastro,'dd/MM/yyyy')}"></td>				
+					<td th:text="${produtos.id}"></td>
+					<td th:text="${produtos.nome}"></td>
+					<td th:text="${produtos.marca}"></td>
+					<td th:text="${produtos.altura}"></td>
+					<td th:text="${produtos.largura}"></td>
+					<td th:text="${produtos.profundidade}"></td>
+					<td th:text="${produtos.peso}"></td>
+					<td th:text="${produtos.preco}"></td>
 					<td>
-						<a th:href="@{/editar/{id}(id=${clientes.id})}">Editar</a>
+						<a th:href="@{/edit/{id}(id=${produtos.id})}">Editar</a>
 					</td>
 					<td>
-						<a th:href="@{/remover/{id}(id=${clientes.id})}">Remover</a>
+						<a th:href="@{/remove/{id}(id=${produtos.id})}">Remover</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 </body>
+
 </html>

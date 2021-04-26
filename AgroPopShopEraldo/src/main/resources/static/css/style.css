@@ -3,13 +3,20 @@ body{
     text-align: center;
     color: rgb(0, 0, 0);
 }
+input { 
+	background: rgb(248, 248, 211);
+}
 .p{
 	font-family: Arial, Helvetica, sans-serif;
 	color: black;
 }
 
 form {
+	text-align: center;
 	margin-left: 20px;
+}
+form p{
+	text-align: left;
 }
 
 .Menu ul {
@@ -99,3 +106,19 @@ form {
     font-size: 15px;
     
     }
+    .button{	 	
+	border-bottom: 2px;
+	border-color: rgb(171, 88, 88);
+	border-radius: 4px;
+	background: rgb(128, 64, 64);
+	width: 80px;
+	height: 35px;
+}
+.button:hover{
+	color:rgb(27, 27, 27);
+	background: rgb(128, 64, 64);
+}
+.buttonpx{
+	font-size: 13px;
+	font-weight: bold;
+}
