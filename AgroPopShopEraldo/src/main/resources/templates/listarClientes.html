@@ -12,8 +12,11 @@
 </head>
 
 <body>
+
 	<div class="top">
 		<img th:src="@{/imagens/topo.jpg}" class="img-responsive" />
+	</div>
+	<div class="menu">
 	</div>
 	<div class="Menu">
 		<ul>
@@ -22,12 +25,18 @@
 			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
 			<li><a href="/listarClientes" class="active">Clientes</a></li>
 			<li><a href="/listarProdutos">Produtos</a></li>
+			
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
 	</div>
 
 	<p>Clientes Cadastrados</p>
+	<div class="icone">
+	<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico"/></a>
+	<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico"/></a>
+	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
+	</div>
 	<div class="list">
 
 		<table>
@@ -42,6 +51,7 @@
 					<th>Data de Cadastro</th>
 					<th>Editar</th>
 					<th>Remover</th>
+					<th>Dependente</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,6 +69,7 @@
 					</td>
 					<td>
 						<a th:href="@{/remover/{id}(id=${clientes.id})}">Remover</a>
+						<td><a href="/cadastrarDependente">+</a></td>
 					</td>
 				</tr>
 			</tbody>

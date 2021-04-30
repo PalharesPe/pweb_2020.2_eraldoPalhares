@@ -12,8 +12,12 @@
 </head>
 
 <body>
+
 	<div class="top">
+	
 		<img th:src="@{/imagens/topo.jpg}" class="img-responsive" />
+	</div>
+	<div class="menu">
 	</div>
 	<div class="Menu">
 		<ul>
@@ -29,6 +33,11 @@
 
 
 	<p>Cadastrar Produtos</p>
+	<div class="icone">
+	<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico"/></a>
+	<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico"/></a>
+	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
+	</div>	
 	<div class="cad">
 		<form method="POST" th:object="${produto}" th:action="@{/cadastrarProdutos}">
 		
