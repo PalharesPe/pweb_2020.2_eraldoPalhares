@@ -63,6 +63,8 @@ public class agroController {
 	@GetMapping("/remover/{id}")
 	public ModelAndView removerCliente(@PathVariable("id") long id) {
 		Cliente aRemover = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+		Dependente dRemover = depRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+		depRepo.delete(dRemover);
 		agroRepo.delete(aRemover);
 		return new ModelAndView("redirect:/listarClientes");
 	}
