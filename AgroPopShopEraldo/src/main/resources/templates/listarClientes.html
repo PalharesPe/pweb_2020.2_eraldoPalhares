@@ -25,7 +25,7 @@
 			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
 			<li><a href="/listarClientes" class="active">Clientes</a></li>
 			<li><a href="/listarProdutos">Produtos</a></li>
-			
+			<li><a href="/listarDependente">Dependentes</a></li>
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
@@ -52,6 +52,7 @@
 					<th>Editar</th>
 					<th>Remover</th>
 					<th>Dependente</th>
+					<th>mais</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -69,7 +70,14 @@
 					</td>
 					<td>
 						<a th:href="@{/remover/{id}(id=${clientes.id})}">Remover</a>
-						<td><a href="/cadastrarDependente">+</a></td>
+					</td>
+						
+						<td><a th:href="@{/cadastrarDependente/{id}(id=${clientes.id})}">+</a></td>
+						
+						<td><a th:href="@{/infoClientes/{id}(id=${clientes.id})}">mais</a></td>
+						
+						
+						
 					</td>
 				</tr>
 			</tbody>

@@ -24,6 +24,7 @@
 			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
 			<li><a href="/listarClientes">Clientes</a></li>
 			<li><a href="/listarProdutos">Produtos</a></li>
+			<li><a href="/listarDependente">Dependentes</a></li>
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
@@ -32,29 +33,24 @@
 	<p>Cadastro de Dependente</p>
 	<div class="cad">
 		<form method="POST" th:object="${dependente}" th:action="@{/cadastrarDependente}">
-
-			<p>
-				Nome completo: <input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />
+			<p>Id do Cliente:
+			<input type="text" th:field="${cliente.id}" disabled />
 			</p>
-			<p>
-				<td th:text="${#temporals.format(pessoa.dataNascimento,'dd/MM/yyyy')}"></td>
+			<p> Informar Id do Cliente:<input type="text" th:field="*{idPrincipal}" required />
+			</p>
+			<hr>
+			
+			
+			<p> Nome completo: <input type="text" placeholder="Seu nome completo." th:field="*{nome}" required /></p>
+			<p>Data de nascimento: <input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}" required />
 			</p>
 			<p>Gênero:</p>
-			<p>
-				<input type="radio" name="genero" value="Masculino" th:field="*{genero}" required />Masculino
-			</p>
-			<p>
-				<input type="radio" name="genero" value="Feminino" th:field="*{genero}" required />Feminino
-			</p>
-			<p>
-				<input type="radio" name="genero" value="Não informado" th:field="*{genero}" required />Não informar
-			</p>
-
-			
+			<p><input type="radio" name="genero" value="Masculino" th:field="*{genero}" required />Masculino</p>
+			<p><input type="radio" name="genero" value="Feminino" th:field="*{genero}" required />Feminino</p>
+			<p><input type="radio" name="genero" value="Não informado" th:field="*{genero}" required />Não informado</p>
 
 			<input type="reset" class="button buttonpx" value="Limpar">
 			<input type="submit" class="button buttonpx" value="Cadastrar">
-
 		</form>
 		<br>
 	</div>

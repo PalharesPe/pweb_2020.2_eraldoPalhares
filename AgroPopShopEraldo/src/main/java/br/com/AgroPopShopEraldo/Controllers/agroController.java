@@ -11,20 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.AgroPopShopEraldo.Repositories.agroRepository;
+import br.com.AgroPopShopEraldo.Repositories.dependRepository;
 import br.com.AgroPopShopEraldo.model.Cliente;
+import br.com.AgroPopShopEraldo.model.Dependente;
 
 @Controller
 @RequestMapping("/")
 public class agroController {
 	@Autowired
 	agroRepository agroRepo;
+	@Autowired
+	dependRepository depRepo;
 
 	@GetMapping
 	public String index() {
 		return "index.html";
 	}
 
-	//OK//
+	
 	@GetMapping("/listarClientes")
 	public ModelAndView listarClientes() {
 		List<Cliente> lista = agroRepo.findAll();
@@ -62,5 +66,34 @@ public class agroController {
 		agroRepo.delete(aRemover);
 		return new ModelAndView("redirect:/listarClientes");
 	}
+	//DEPENDENTE//
+	@GetMapping("/cadastrarDependente/{id}")
+	public ModelAndView cadastrarDependente (@PathVariable("id") long id) {
+		Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+		ModelAndView mav = new ModelAndView("cadastrarDependente");
+		mav.addObject(new Dependente());
+		mav.addObject(cliente);
+		return mav;
+	}/*
+	//INFOSMAÇÕES//
+	@GetMapping("/infoClientes/{id}")
+	public ModelAndView infoCliente(@PathVariable("id") long id) {
+	List<Dependente> lista1 = depRepo.findByIdPrincipal(id);
+	Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+	ModelAndView mav = new ModelAndView("infoCliente");
+	mav.addObject("dependente", lista1);
+	mav.addObject(cliente);
+	return mav;
+}*/
+	
+	@GetMapping("infoClientes/{id}")
+	public ModelAndView infoCLiente(@PathVariable("id") long id) {
+	List<Dependente> listad = depRepo.findByIdPrincipal(id);
+	Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+	ModelAndView mav = new ModelAndView("infoClientes");
+	mav.addObject("dependente", listad);
+	mav.addObject(cliente);
+	return mav;
+}
 	
 }

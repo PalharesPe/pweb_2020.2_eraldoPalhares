@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.AgroPopShopEraldo.Repositories.produtoRepository;
-import br.com.AgroPopShopEraldo.model.Produto;
+import br.com.AgroPopShopEraldo.produto.Produto;
 
 @Controller
 public class prodController {

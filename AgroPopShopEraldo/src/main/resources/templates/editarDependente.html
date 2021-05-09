@@ -38,14 +38,13 @@
 	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
 	</div>	
 	<div class="cad">
-		<form action="#" th:action="@{/editar/{id}(id=${cliente.id})}" th:object="${cliente}" method="POST">
-
+		<form action="#" th:action="@{/editt/{id}(id=${dependente.id})}" th:object="${dependente}" method="POST">
+			
+			<p> Id Principal<input type="text" th:field="*{idPrincipal}" required />
+			</p>
 			<p>
 				Nome completo: <input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />
-			</p>
-			<p>
-				e-Mail: <input type="text" placeholder="nome@dominio.com" th:field="*{email}" required />
-			</p>
+			</p>			
 			<p>Gênero:</p>
 			<p>
 				<input type="radio" name="genero" value="Masculino" th:field="*{genero}" required />Masculino
@@ -55,27 +54,9 @@
 			</p>
 			<p>
 				<input type="radio" name="genero" value="Não informado" th:field="*{genero}" required />Não informar
+			</p>		
+			<p>Data de nascimento: <input type="date" placeholder="dd/mm/aaaa" th:field="*{dataNascimento}" required />
 			</p>
-
-
-			<p>
-				Endereço: <input type="text" placeholder="Av. Bernardo Vieira, Natal-RN" th:field="*{endereco}"
-					required />
-			</p>
-			<p>
-				Município: <input type="text" placeholder="Campinas" th:field="*{municipio}" required />
-			</p>
-			<p>
-				Cidade: <input type="text" placeholder="Bento Fernandes" th:field="*{cidade}" required />
-			</p>
-			<p>
-				Bairro: <input type="text" placeholder="Centro" th:field="*{bairro}" required />
-			</p>
-
-			<p>
-				CEP: <input maxlength="9" type="text" placeholder="00000-000" th:field="*{cep}" required />
-			</p>
-
 
 			<input type="reset" class="button" value="Limpar">
 			<input type="submit" class="button" value="Salvar">

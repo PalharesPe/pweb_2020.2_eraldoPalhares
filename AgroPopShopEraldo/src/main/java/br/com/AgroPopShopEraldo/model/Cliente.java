@@ -29,7 +29,7 @@ public class Cliente implements Serializable {
 	private String nome;
 	private String genero;
 	private String email;
-	private String endereço, municipio, cidade, bairro;
+	private String endereco, municipio, cidade, bairro;
 	private String cep;
 	@DateTimeFormat(pattern="dd-MMM-YYYY")
 	private LocalDate dataCadastro = LocalDate.now();
@@ -67,12 +67,12 @@ public class Cliente implements Serializable {
 		this.genero = genero;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getMunicipio() {
