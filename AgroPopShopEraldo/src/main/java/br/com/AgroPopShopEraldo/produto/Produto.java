@@ -25,15 +25,17 @@ public class Produto implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long idp;
+	private Long id;
 	private String nome;
 	private String marca;
-	private long altura, largura, profundidade, peso, preco;
-	public Long getIdp() {
-		return idp;
+	private double altura, largura, profundidade, peso, preco;
+	
+	
+	public Long getId() {
+		return id;
 	}
-	public void setIdp(Long idp) {
-		this.idp = idp;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -47,34 +49,38 @@ public class Produto implements Serializable{
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
-	public long getAltura() {
+	
+	public double getAltura() {
 		return altura;
 	}
-	public void setAltura(long altura) {
+	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-	public long getLargura() {
+	public double getLargura() {
 		return largura;
 	}
-	public void setLargura(long largura) {
+	public void setLargura(double largura) {
 		this.largura = largura;
 	}
-	public long getProfundidade() {
+	public double getProfundidade() {
 		return profundidade;
 	}
-	public void setProfundidade(long profundidade) {
+	public void setProfundidade(double profundidade) {
 		this.profundidade = profundidade;
 	}
-	public long getPeso() {
+	public double getPeso() {
 		return peso;
 	}
-	public void setPeso(long peso) {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-	public long getPreco() {
+	public double getPreco() {
 		return preco;
 	}
-	public void setPreço(long preco) {
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
+	public void setPreo(long preco) {
 		this.preco = preco;
 	}
 	public static long getSerialversionuid() {

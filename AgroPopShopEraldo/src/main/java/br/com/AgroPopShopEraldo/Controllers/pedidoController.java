@@ -36,11 +36,6 @@ public class pedidoController {
 		ModelAndView modelAndView = new ModelAndView("cadastrarPedido");
 		modelAndView.addObject(new PedidoVenda());
 		return modelAndView;
-	}/**
-		 * @PostMapping("/cadastrarClientes") public String cadastrarClientes(Cliente c)
-		 * { this.agroRepo.save(c); return "redirect:/listarClientes";
-		 * 
-		 * }
-		 */
+	}
 
 }

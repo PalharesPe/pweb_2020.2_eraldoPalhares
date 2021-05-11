@@ -39,7 +39,7 @@
 	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
 	</div>	
 	<div class="cad">
-		<form action="#" th:action="@{/edit/{idp}(id=${produto.idp})}" th:object="${produto}" method="POST">
+		<form action="#" th:action="@{/editarprod/{id}(id=${produto.id})}" th:object="${produto}" method="POST">
 
 			<p>
 				Produto : <input type="text" placeholder="Nome" th:field="*{nome}" required />

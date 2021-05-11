@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.AgroPopShopEraldo.Repositories.agroRepository;
 import br.com.AgroPopShopEraldo.Repositories.produtoRepository;
-import br.com.AgroPopShopEraldo.model.Cliente;
 import br.com.AgroPopShopEraldo.produto.Produto;
 
 @Controller
@@ -40,31 +39,24 @@ public class prodController {
 		this.produtoRepo.save(p);
 		return "redirect:/listarProdutos";
 	}
-	@GetMapping("/edit/{idp}")
-	public ModelAndView formEditarProduto(@PathVariable("idp") long id) {
+	@GetMapping("/editarprod/{id}")
+	public ModelAndView formEditarProduto(@PathVariable("id") long id) {
 		Produto produto = produtoRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		ModelAndView modelAndView = new ModelAndView("editarProdutos");
 		modelAndView.addObject(produto);
 		return modelAndView;
 	}
-	@PostMapping("/edit/{idp}")
-	public ModelAndView editarProdutos(@PathVariable("idp") long id, Produto p) {
+	@PostMapping("/editarprod/{id}")
+	public ModelAndView editarProdutos(@PathVariable("id") long id, Produto p) {
 		this.produtoRepo.save(p);
 		return new ModelAndView("redirect:/listarProdutos");
 	}
-	@GetMapping("/remove/{idp}")
-	public ModelAndView removerProduto(@PathVariable("idp") long id) {
+		
+	@GetMapping("/removerprod/{id}")
+	public ModelAndView removerProduto(@PathVariable("id") long id) {
 		Produto aRemover = produtoRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		produtoRepo.delete(aRemover);
 		return new ModelAndView("redirect:/listarProdutos");
 	}
-	//PEDIDO//
-	@GetMapping("/cadastrarPedido/{idPedido}")
-	public ModelAndView cadastrarPedido (@PathVariable("id") long id) {
-		Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
-		ModelAndView mav = new ModelAndView("cadastrarPedido");
-		mav.addObject(new Produto());
-		mav.addObject(cliente);
-		return mav;
-	}
+	
 }
