@@ -25,15 +25,15 @@ public class Produto implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long idp;
 	private String nome;
 	private String marca;
 	private long altura, largura, profundidade, peso, preco;
-	public Long getId() {
-		return id;
+	public Long getIdp() {
+		return idp;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdp(Long idp) {
+		this.idp = idp;
 	}
 	public String getNome() {
 		return nome;

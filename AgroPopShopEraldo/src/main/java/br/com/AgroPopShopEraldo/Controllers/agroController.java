@@ -76,17 +76,7 @@ public class agroController {
 		mav.addObject(new Dependente());
 		mav.addObject(cliente);
 		return mav;
-	}/*
-	//INFOSMAÇÕES//
-	@GetMapping("/infoClientes/{id}")
-	public ModelAndView infoCliente(@PathVariable("id") long id) {
-	List<Dependente> lista1 = depRepo.findByIdPrincipal(id);
-	Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
-	ModelAndView mav = new ModelAndView("infoCliente");
-	mav.addObject("dependente", lista1);
-	mav.addObject(cliente);
-	return mav;
-}*/
+	}
 	
 	@GetMapping("infoClientes/{id}")
 	public ModelAndView infoCLiente(@PathVariable("id") long id) {

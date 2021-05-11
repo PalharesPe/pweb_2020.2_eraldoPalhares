@@ -26,6 +26,7 @@
 			<li><a href="/listarClientes">Clientes</a></li>
 			<li><a href="/listarProdutos" class="active">Produtos</a></li>
 			<li><a href="/listarDependente">Dependentes</a></li>
+			<li><a href="/cadastrarPedido">Pedido</a></li>
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
@@ -57,7 +58,7 @@
 
 				<tr th:each="produtos: ${produtos}">
 
-					<td th:text="${produtos.id}"></td>
+					<td th:text="${produtos.idp}"></td>
 					<td th:text="${produtos.nome}"></td>
 					<td th:text="${produtos.marca}"></td>
 					<td th:text="${produtos.altura}"></td>
@@ -66,10 +67,10 @@
 					<td th:text="${produtos.peso}"></td>
 					<td th:text="${produtos.preco}"></td>					
 					<td>
-						<a th:href="@{/edit/{id}(id=${produtos.id})}">Editar</a>
+						<a th:href="@{/edit/{idp}(idp=${produtos.idp})}">Editar</a>
 					</td>
 					<td>
-						<a th:href="@{/remove/{id}(id=${produtos.id})}">Remover</a>
+						<a th:href="@{/remove/{idp}(idp=${produtos.idp})}">Remover</a>
 					</td>
 				</tr>
 			</tbody>
