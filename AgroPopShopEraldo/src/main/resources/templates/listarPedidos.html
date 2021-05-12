@@ -24,7 +24,7 @@
 			<li><a href="/cadastrarClientes">Cadastrar</a></li>
 			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
 			<li><a href="/listarClientes">Clientes</a></li>
-			<li><a href="/listarProdutos" class="active">Produtos</a></li>
+			<li><a href="/listarProdutos">Produtos</a></li>
 			<li><a href="/listarDependente">Dependentes</a></li>
 			<li><a href="/cadastrarPedido">Pedido</a></li>
 			<li><a href="/public/sobre.html">Sobre</a></li>
@@ -39,34 +39,30 @@
 	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
 	</div>
 	<div class="list">
+
 		<table>
 			<thead>
 				<tr>
-					<th>Id</th>
-					<th>Nome</th>
-					<th>Marca</th>
-					<th>Altura</th>
-					<th>Largura</th>
-					<th>profundidade</th>
-					<th>Peso</th>
-					<th>Preço</th>					
-					<th>Editar</th>
+
+					<th>Chave do Cliente</th>
+					<th>Produto Pedido</th>					
 					<th>Remover</th>
+					
 				</tr>
 			</thead>
 			<tbody>
 
-				<tr th:each="pedido: ${pedido}">
+				<tr th:each="venda: ${venda}">
 
-					<td th:text="${pedido.id}"></td>
-					<td th:text="${pedido.totalProduto}"></td>
-					<td th:text="${pedido.totalPedido}"></td>
-									
+					<td th:text="${venda.idPedido}"></td>
+					<td th:text="${venda.idProduto}"></td>			
+					
 					<td>
-						<a th:href="@{/edit/{idp}(idp=${produtos.idp})}">Editar</a>
-					</td>
-					<td>
-						<a th:href="@{/remove/{idp}(idp=${produtos.idp})}">Remover</a>
+						<a th:href="@{/removerpedido/{id}(id=${venda.id})}">Remover</a>
+					</td>										
+												
+						
+						
 					</td>
 				</tr>
 			</tbody>

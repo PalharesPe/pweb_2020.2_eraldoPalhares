@@ -30,19 +30,20 @@ public class dependController {
 	}
 	
 		
-		/**REMOVER*/
+		//REMOVER//
 	@GetMapping("/remov/{id}")
 	public ModelAndView removerDependente(@PathVariable("id") long id) {
 		Dependente aRemover = depRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		depRepo.delete(aRemover);
 		return new ModelAndView("redirect:/listarDependente");
 	}
-
+		//DEPENDENTE//
 	@PostMapping("/cadastrarDependente")
 	public String adicionarDependente(Dependente d) {
 		this.depRepo.save(d);
 		return "redirect:/listarClientes";
 	}
+	
 	@GetMapping("/editt/{id}")
 	public ModelAndView formEditarDependente(@PathVariable("id") long id) {
 		Dependente dependente = depRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
@@ -50,6 +51,7 @@ public class dependController {
 		modelAndView.addObject(dependente);
 		return modelAndView;
 	}
+	
 	@PostMapping("/editt/{id}")
 	public ModelAndView editarDependente(@PathVariable("id") long id, Dependente d) {
 		this.depRepo.save(d);

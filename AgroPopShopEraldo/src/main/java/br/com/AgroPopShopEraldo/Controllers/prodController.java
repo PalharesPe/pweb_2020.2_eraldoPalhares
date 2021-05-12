@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.AgroPopShopEraldo.Repositories.agroRepository;
+import br.com.AgroPopShopEraldo.Repositories.pedidoRepository;
 import br.com.AgroPopShopEraldo.Repositories.produtoRepository;
 import br.com.AgroPopShopEraldo.produto.Produto;
 
@@ -19,7 +20,8 @@ public class prodController {
 	produtoRepository produtoRepo;
 	@Autowired
 	agroRepository agroRepo;
-
+	@Autowired
+	pedidoRepository pedidoRepo;
 	
 	@GetMapping("/listarProdutos")
 	public ModelAndView listarProdutos() {
@@ -58,5 +60,8 @@ public class prodController {
 		produtoRepo.delete(aRemover);
 		return new ModelAndView("redirect:/listarProdutos");
 	}
+	
+	
+	
 	
 }

@@ -34,9 +34,9 @@
 
 	<p>Clientes Cadastrados</p>
 	<div class="icone">
-	<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico"/></a>
-	<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico"/></a>
-	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
+		<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico" /></a>
+		<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico" /></a>
+		<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico" /></a>
 	</div>
 	<div class="list">
 
@@ -53,6 +53,7 @@
 					<th>Editar</th>
 					<th>Remover</th>
 					<th>Dependente</th>
+					<th>Pedido</th>
 					<th>mais</th>
 				</tr>
 			</thead>
@@ -72,8 +73,10 @@
 					<td>
 						<a th:href="@{/remover/{id}(id=${clientes.id})}">Remover</a>
 					</td>
-						
+												<!--ADICIONAIS-->
 						<td><a th:href="@{/cadastrarDependente/{id}(id=${clientes.id})}">+</a></td>
+						
+						<td><a th:href="@{/cadastrarPedido/{id}(id=${clientes.id})}">Fazer Pedido</a></td>
 						
 						<td><a th:href="@{/infoClientes/{id}(id=${clientes.id})}">mais</a></td>
 						

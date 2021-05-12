@@ -14,6 +14,7 @@ import br.com.AgroPopShopEraldo.Repositories.agroRepository;
 import br.com.AgroPopShopEraldo.Repositories.dependRepository;
 import br.com.AgroPopShopEraldo.model.Cliente;
 import br.com.AgroPopShopEraldo.model.Dependente;
+import br.com.AgroPopShopEraldo.pedido.Venda;
 
 @Controller
 @RequestMapping("/")
@@ -28,7 +29,7 @@ public class agroController {
 		return "index.html";
 	}
 
-	
+	//CRUD//
 	@GetMapping("/listarClientes")
 	public ModelAndView listarClientes() {
 		List<Cliente> lista = agroRepo.findAll();
@@ -68,6 +69,8 @@ public class agroController {
 		agroRepo.delete(aRemover);
 		return new ModelAndView("redirect:/listarClientes");
 	}
+	
+	
 	//DEPENDENTE//
 	@GetMapping("/cadastrarDependente/{id}")
 	public ModelAndView cadastrarDependente (@PathVariable("id") long id) {
@@ -77,7 +80,17 @@ public class agroController {
 		mav.addObject(cliente);
 		return mav;
 	}
+	//PEDIDO//
+	@GetMapping("/cadastrarPedido/{id}")
+	public ModelAndView cadastrarPedido(@PathVariable("id") long id) {
+		Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+		ModelAndView mav = new ModelAndView("cadastrarPedido");
+		mav.addObject(new Venda());
+		mav.addObject(cliente);
+		return mav;
+	}
 	
+	//Lista Cliente e Dependente//
 	@GetMapping("infoClientes/{id}")
 	public ModelAndView infoCLiente(@PathVariable("id") long id) {
 	List<Dependente> listad = depRepo.findByIdPrincipal(id);
