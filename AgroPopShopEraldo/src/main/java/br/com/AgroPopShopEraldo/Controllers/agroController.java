@@ -12,9 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.AgroPopShopEraldo.Repositories.agroRepository;
 import br.com.AgroPopShopEraldo.Repositories.dependRepository;
+import br.com.AgroPopShopEraldo.Repositories.pedidoRepository;
 import br.com.AgroPopShopEraldo.model.Cliente;
 import br.com.AgroPopShopEraldo.model.Dependente;
-import br.com.AgroPopShopEraldo.pedido.Venda;
+import br.com.AgroPopShopEraldo.pedido.Pedido;
 
 @Controller
 @RequestMapping("/")
@@ -23,7 +24,9 @@ public class agroController {
 	agroRepository agroRepo;
 	@Autowired
 	dependRepository depRepo;
-
+	@Autowired
+	pedidoRepository pedidoRepo;
+	
 	@GetMapping
 	public String index() {
 		return "index.html";
@@ -85,11 +88,11 @@ public class agroController {
 	public ModelAndView cadastrarPedido(@PathVariable("id") long id) {
 		Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 		ModelAndView mav = new ModelAndView("cadastrarPedido");
-		mav.addObject(new Venda());
+		mav.addObject(new Pedido());
 		mav.addObject(cliente);
 		return mav;
 	}
-	
+		
 	//Lista Cliente e Dependente//
 	@GetMapping("infoClientes/{id}")
 	public ModelAndView infoCLiente(@PathVariable("id") long id) {
@@ -97,6 +100,15 @@ public class agroController {
 	Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
 	ModelAndView mav = new ModelAndView("infoClientes");
 	mav.addObject("dependente", listad);
+	mav.addObject(cliente);
+	return mav;
+}
+	@GetMapping("listarPedidos/{id}")
+	public ModelAndView ListarPedidos(@PathVariable("id") long id) {
+	List<Pedido> listap = pedidoRepo.findByIdPedido(id);
+	Cliente cliente = agroRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));
+	ModelAndView mav = new ModelAndView("listarPedidos");
+	mav.addObject("pedido", listap);
 	mav.addObject(cliente);
 	return mav;
 }

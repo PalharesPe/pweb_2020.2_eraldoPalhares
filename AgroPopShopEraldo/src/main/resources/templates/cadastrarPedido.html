@@ -27,7 +27,7 @@
 			<li><a href="/listarClientes">Clientes</a></li>
 			<li><a href="/listarProdutos">Produtos</a></li>
 			<li><a href="/listarDependente">Dependentes</a></li>
-			<li><a href="/cadastrarPedido" class="active">Pedido</a></li>
+			
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
@@ -42,20 +42,22 @@
 	</div>	
 	<div class="cad">
 		
-		<form method="POST" th:object="${venda}" th:action="@{/cadastrarPedido}">		
+		<form method="POST" th:object="${pedido}" th:action="@{/cadastrarPedido}">		
 			
-				
+			<!--Exibe Id DO Cliente-->
 			<p>Chave do Cliente <input type="text" th:field="${cliente.id}" disabled />
 			</p>
 			<hr>	
+			<!--Inserir o id do Cliente-->
 			<p> Informe a Chave do Cliente <input type="text" placeholder="Algo do pedido" th:field="*{idPedido}" required/></p>
+			<!--Inserir o id do produto pra lista-->
 			<p> Informe a Chave do Produto <input type="text" placeholder="Algo do produto" th:field="*{idProduto}" required/></p>
 			
 			<p> Quantidade <input type="text" placeholder="Talvez" th:field="*{quantidade}" required/></p>
+			
 			<br>
 			<input type="reset" class="button buttonpx" value="Limpar">
-			<input type="submit" class="button buttonpx" value="Adicionar">
-			<input type="submit" class="button buttonpx" value="Finalizar">
+			<input type="submit" class="button buttonpx" value="Adicionar">			
 		</form>
 		<br>
 	</div>

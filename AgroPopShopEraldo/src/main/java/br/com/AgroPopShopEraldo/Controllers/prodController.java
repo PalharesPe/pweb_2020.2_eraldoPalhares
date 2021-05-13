@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.AgroPopShopEraldo.Repositories.agroRepository;
-import br.com.AgroPopShopEraldo.Repositories.pedidoRepository;
 import br.com.AgroPopShopEraldo.Repositories.produtoRepository;
 import br.com.AgroPopShopEraldo.produto.Produto;
 
@@ -20,8 +19,7 @@ public class prodController {
 	produtoRepository produtoRepo;
 	@Autowired
 	agroRepository agroRepo;
-	@Autowired
-	pedidoRepository pedidoRepo;
+	
 	
 	@GetMapping("/listarProdutos")
 	public ModelAndView listarProdutos() {
@@ -41,6 +39,10 @@ public class prodController {
 		this.produtoRepo.save(p);
 		return "redirect:/listarProdutos";
 	}
+	
+	
+	
+	// Editar /Remover//
 	@GetMapping("/editarprod/{id}")
 	public ModelAndView formEditarProduto(@PathVariable("id") long id) {
 		Produto produto = produtoRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("ID inválido:" + id));

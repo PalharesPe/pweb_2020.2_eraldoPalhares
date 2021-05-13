@@ -26,7 +26,7 @@
 			<li><a href="/listarClientes" class="active">Clientes</a></li>
 			<li><a href="/listarProdutos">Produtos</a></li>
 			<li><a href="/listarDependente">Dependentes</a></li>
-			<li><a href="/cadastrarPedido">Pedido</a></li>
+		
 			<li><a href="/public/sobre.html">Sobre</a></li>
 			<li><a href="/public/contato.html">Contato</a></li>
 		</ul>
@@ -55,6 +55,7 @@
 					<th>Dependente</th>
 					<th>Pedido</th>
 					<th>mais</th>
+					<th>Pedidos</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -79,7 +80,7 @@
 						<td><a th:href="@{/cadastrarPedido/{id}(id=${clientes.id})}">Fazer Pedido</a></td>
 						
 						<td><a th:href="@{/infoClientes/{id}(id=${clientes.id})}">mais</a></td>
-						
+						<td><a th:href="@{/listarPedidos/{id}(id=${clientes.id})}">Pedidos</a></td>
 						
 						
 					</td>
