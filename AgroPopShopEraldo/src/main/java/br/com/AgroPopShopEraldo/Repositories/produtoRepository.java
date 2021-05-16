@@ -8,5 +8,6 @@ import br.com.AgroPopShopEraldo.produto.Produto;
 @Repository
 public interface produtoRepository extends JpaRepository<Produto, Long>{
 
+
 	
 }
