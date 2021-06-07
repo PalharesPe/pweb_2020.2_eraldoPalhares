@@ -1,0 +1,144 @@
+body{
+    background-color: #f5f5c1;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+input { 
+	background: rgb(248, 248, 211);
+}
+.p{
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+form {
+	text-align: center;
+	margin-left: 20px;
+}
+form p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	text-align: left;
+}
+.Menu ul {
+	/*Desce o menu*/
+	margin-top: -41px; /*ok*/	
+    padding: 13px;
+    left: -7px;
+    /*Aumenta o fundo do menu*/
+    padding-bottom:7px;
+    position: absolute;
+}
+
+/* Deixa o menu vertical*/
+.Menu ul li { 		
+	display: inline; 
+}
+.menu{
+	width: 1918px;
+	margin-left: -7px;
+	margin-top: 148px;
+	height: 39px;
+	background: white;
+	opacity: 65%;
+	
+}
+/*Menu Palavras*/
+.Menu ul li a {	
+	
+    padding: 11px 30px;    
+    margin-left:-6px;    
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.Menu ul li a:hover {
+    background-color: rgb(128, 64, 64);
+    color: rgb(245, 220, 131);
+}
+.Menu a.active{
+	background: rgb(128, 64, 64);
+	color: rgb(245, 220, 131);
+}
+
+
+/*Formulario lista*/
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+	
+    padding: 4px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  td{
+	
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+  
+  tr:hover {
+      background-color:rgb(248, 248, 214);
+      
+  }
+  .top{
+	margin-left: -8px;
+	margin-top: -9px ;	
+	height: 90px;
+	
+	
+}
+  .cad {
+    text-align: left;
+    background: #f1f1b7;
+    margin: auto;
+    width: 600px;
+    height:auto;
+    border-radius: 5px;
+    border: solid 1px;  
+    border-color: rgb(43, 45, 0);
+    font-size: 15px;
+    
+    }
+    .list {
+    text-align: left;
+    background: #f1f1b7;
+    margin: auto;
+    width: 1000px;
+    height:auto;
+    border-radius: 5px;
+    border: solid 1px;  
+    border-color: rgb(43, 45, 0);
+    font-size: 15px;
+    
+    }
+    .button{	 	
+	border-bottom: 2px;
+	border-color: rgb(171, 88, 88);
+	border-radius: 4px;
+	background: rgb(128, 64, 64);
+	width: 80px;
+	height: 35px;
+}
+.button:hover{
+	color:rgb(27, 27, 27);
+	background: rgb(128, 64, 64);
+}
+.buttonpx{
+	font-size: 13px;
+	font-weight: bold;
+}
+.ico{
+	margin-top: -82px;
+	margin-left: 700px;
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	
+}
+.icone a{
+	margin: 20px;;
+}

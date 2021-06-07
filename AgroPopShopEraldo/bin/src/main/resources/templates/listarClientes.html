@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<meta codigoSecreto="1717583737">
+	<title>Agro Pop Shop - Clientes Cadastrados</title>
+	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="top">
+		<img th:src="@{/imagens/topo.jpg}" class="img-responsive" />
+	</div>
+	<div class="menu">
+	</div>
+	<div class="Menu">
+		<ul>
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/cadastrarClientes">Cadastrar</a></li>
+			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
+			<li><a href="/listarClientes" class="active">Clientes</a></li>
+			<li><a href="/listarProdutos">Produtos</a></li>
+			<li><a href="/listarDependente">Dependentes</a></li>
+		
+			<li><a href="/public/sobre.html">Sobre</a></li>
+			<li><a href="/public/contato.html">Contato</a></li>
+		</ul>
+	</div>
+
+	<p>Clientes Cadastrados</p>
+	<div class="icone">
+		<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico" /></a>
+		<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico" /></a>
+		<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico" /></a>
+	</div>
+	<div class="list">
+
+		<table>
+			<thead>
+				<tr>
+
+					<th>Codigo</th>
+					<th>Nome Completo</th>
+					<th>e-Mail</th>
+					<th>Genêro</th>
+					<th>CEP</th>
+					<th>Data de Cadastro</th>
+					<th>Editar</th>
+					<th>Remover</th>
+					<th>Dependente</th>
+					<th>Pedido</th>
+					<th>mais</th>
+					<th>Pedidos</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="clientes: ${clientes}">
+
+					<td th:text="${clientes.id}"></td>
+					<td th:text="${clientes.nome}"></td>
+					<td><a th:href="'mailto:'+${clientes.email}" th:text="${clientes.email}"></a></td>
+					<td th:text="${clientes.genero}"></td>
+					<td th:text="${clientes.cep}"></td>
+					<td th:text="${#temporals.format(clientes.dataCadastro,'dd/MM/yyyy')}"></td>				
+					<td>
+						<a th:href="@{/editar/{id}(id=${clientes.id})}">Editar</a>
+					</td>
+					<td>
+						<a th:href="@{/remover/{id}(id=${clientes.id})}">Remover</a>
+					</td>
+												<!--ADICIONAIS-->
+						<td><a th:href="@{/cadastrarDependente/{id}(id=${clientes.id})}">+</a></td>
+						
+						<td><a th:href="@{/cadastrarPedido/{id}(id=${clientes.id})}">Fazer Pedido</a></td>
+						
+						<td><a th:href="@{/infoClientes/{id}(id=${clientes.id})}">mais</a></td>
+						<td><a th:href="@{/listarPedidos/{id}(id=${clientes.id})}">Pedidos</a></td>
+						
+						
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

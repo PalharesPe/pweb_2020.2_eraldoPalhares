@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<meta codigoSecreto="1717583737">
+	<title>Agro Pop Shop - Cadastrar Produtos</title>
+	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="top">
+		<img th:src="@{/imagens/topo.jpg}" class="img-responsive" />
+	</div>
+	<div class="menu">
+	</div>
+	<div class="Menu">
+		<ul>
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/cadastrarClientes">Cadastrar</a></li>
+			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
+			<li><a href="/listarClientes">Clientes</a></li>
+			<li><a href="/listarProdutos">Produtos</a></li>
+			<li><a href="/listarDependente">Dependentes</a></li>
+			
+			<li><a href="/public/sobre.html">Sobre</a></li>
+			<li><a href="/public/contato.html">Contato</a></li>
+		</ul>
+	</div>
+
+
+	<p>Cadastrar Produtos</p>
+	<div class="icone">
+	<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico"/></a>
+	<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico"/></a>
+	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
+	</div>	
+	<div class="cad">
+		<form action="#" th:action="@{/editarprod/{id}(id=${produto.id})}" th:object="${produto}" method="POST">
+
+			<p>
+				Produto : <input type="text" placeholder="Nome" th:field="*{nome}" required />
+			</p>
+			<p>
+				Marca : <input type="text" placeholder="Marca" th:field="*{marca}" required />
+			</p>
+			<p>
+				Altura : <input type="text" placeholder="Altura" th:field="*{altura}" required />
+			</p>
+			<p>
+				Largura : <input type="text" placeholder="Largura" th:field="*{largura}" required />
+			</p>
+			<p>
+				Profundidade : <input type="text" placeholder="Profundidade" th:field="*{profundidade}" required />
+			</p>
+			<p>
+				Peso : <input type="text" placeholder="Peso" th:field="*{peso}" required />
+			</p>
+			<p>
+				Preço : <input type="text" placeholder="Preco" th:field="*{preco}" required />
+			</p>
+			<input type="reset" class="button buttonpx" value="Limpar">
+			<input type="submit" class="button buttonpx" value="Salvar">
+		</form>
+		<br>
+	</div>
+
+
+
+</body>
+
+</html>

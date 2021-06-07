@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<meta codigoSecreto="1717583737">
+	<title>Agro Pop Shop - Editar Cliente</title>
+	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="top">
+		<img th:src="@{/imagens/topo.jpg}" class="img-responsive" />
+	</div>
+	<div class="menu">
+	</div>
+	<div class="Menu">
+		<ul>
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/cadastrarClientes">Cadastrar</a></li>
+			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
+			<li><a href="/listarClientes">Clientes</a></li>
+			<li><a href="/listarProdutos">Produtos</a></li>
+			<li><a href="/listarDependente">Dependentes</a></li>
+			
+			<li><a href="/public/sobre.html">Sobre</a></li>
+			<li><a href="/public/contato.html">Contato</a></li>
+		</ul>
+	</div>
+
+
+	<p>Cliente</p>
+	<div class="icone">
+		<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico" /></a>
+		<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico" /></a>
+		<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico" /></a>
+	</div>
+	<div class="cad">
+
+		<form th:object="${cliente}">
+
+
+			<p> Nome Completo: <type="text" th:text="${cliente.nome}">
+			</p>
+
+			<p> Gênero: <type="text" th:text="${cliente.genero}">
+			</p>
+
+			<p> Email: <type="text" th:text="${cliente.email}">
+			</p>
+			<p> Endereço: <type="text" th:text="${cliente.endereco}">
+			</p>
+
+			<p> Municipio: <type="text" th:text="${cliente.municipio}">
+			</p>
+
+			<p> Cidade: <type="text" th:text="${cliente.cidade}">
+			</p>
+
+			<p> Bairro: <type="text" th:text="${cliente.bairro}">
+			</p>
+
+			<p> CEP: <type="text" th:text="${cliente.cep}">
+			</p>
+
+
+
+		</form>
+		<br>
+	</div>
+
+	<p>Pedidos</p>
+	<div class="cad">
+		<table>
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Nome</th>
+					<th>Gênero</th>
+					<th>Remover</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pedido: ${pedido}">
+					<td th:text="${pedido.idPedido}"></td>
+					<td th:text="${pedido.idProduto}"></td>
+					<td th:text="${pedido.quantidade}"></td>
+					<td>
+						<a th:href="@{/removerpedido/{id}(id=${pedido.id})}">Remover</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+</html>

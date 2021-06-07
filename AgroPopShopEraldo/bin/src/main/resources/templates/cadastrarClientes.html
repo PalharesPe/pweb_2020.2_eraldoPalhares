@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=, initial-scale=1.0">
+	<meta codigoSecreto="1717583737">
+	<title>Agro Pop Shop - Cadastrar Clientes</title>
+	<link th:href="@{/public/favicon.ico}" rel="icon" type="image/x-icon">
+	<link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+	<div class="top">
+		<img th:src="@{/imagens/topo.jpg}" class="img-responsive" />
+	</div>
+	<div class="menu">
+	</div>
+	<div class="Menu">
+		<ul>
+			<li><a href="/">Inicio</a></li>
+			<li><a href="/cadastrarClientes" class="active">Cadastrar</a></li>
+			<li><a href="/cadastrarProdutos">Cadastrar Produtos</a></li>
+			<li><a href="/listarClientes">Clientes</a></li>
+			<li><a href="/listarProdutos">Produtos</a></li>
+			<li><a href="/listarDependente">Dependentes</a></li>
+			
+			<li><a href="/public/sobre.html">Sobre</a></li>
+			<li><a href="/public/contato.html">Contato</a></li>
+		</ul>
+	</div>
+
+	<p>Cadastro de Cliente</p>
+	<div class="icone">
+	<a href="#"><img th:src="@{/imagens/icon1.png}" class="ico"/></a>
+	<a href="#"><img th:src="@{/imagens/icon2.png}" class="ico"/></a>
+	<a href="https://github.com/PalharesPe" target="_blank"><img th:src="@{/imagens/icon3.png}" class="ico"/></a>
+	</div>	
+	<div class="cad">
+		<form method="POST" th:object="${cliente}" th:action="@{/cadastrarClientes}">
+
+			<p>
+				Nome completo: <input type="text" placeholder="Seu nome completo." th:field="*{nome}" required />
+			</p>
+			<p>
+				e-Mail: <input type="text" placeholder="nome@dominio.com" th:field="*{email}" required />
+			</p>
+			<p>Gênero:</p>
+			<p>
+				<input type="radio" name="genero" value="Masculino" th:field="*{genero}" required />Masculino
+			</p>
+			<p>
+				<input type="radio" name="genero" value="Feminino" th:field="*{genero}" required />Feminino
+			</p>
+			<p>
+				<input type="radio" name="genero" value="Não informado" th:field="*{genero}" required />Não informar
+			</p>
+
+			<p>
+				Endereço: <input type="text" placeholder="Av. Bernardo Vieira, Natal-RN" th:field="*{endereco}"
+					required />
+			</p>
+			<p>
+				Município: <input type="text" placeholder="Campinas" th:field="*{municipio}" required />
+			</p>
+			<p>
+				Cidade: <input type="text" placeholder="Bento Fernandes" th:field="*{cidade}" required />
+			</p>
+			<p>
+				Bairro: <input type="text" placeholder="Centro" th:field="*{bairro}" required />
+			</p>
+
+			<p>
+				CEP: <input maxlength="9" type="text" placeholder="00000-000" th:field="*{cep}" required />
+			</p>
+
+			<input type="reset" class="button buttonpx" value="Limpar">
+			<input type="submit" class="button buttonpx" value="Cadastrar">
+
+		</form>
+		
+		<br>
+	</div>
+	
+</body>
+
+</html>
